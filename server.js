@@ -22,6 +22,10 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 
+// Serve favicon
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).end();
+});
 
 app.use('/api', require('./routes/auth'));
 app.use('/api', require('./routes/Pet'));
